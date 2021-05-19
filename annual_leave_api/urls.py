@@ -22,4 +22,5 @@ urlpatterns = [
     path('department/', include('department.urls')),
     path('role/', include('roles.urls')),
     #path('holidays/', include('holidays.urls')),
+    path('api-auth', include('rest_framework.urls'))
 ]
