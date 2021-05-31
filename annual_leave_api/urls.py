@@ -21,6 +21,7 @@ urlpatterns = [
     path('employee/', include('employee.urls')),
     path('department/', include('department.urls')),
     path('role/', include('roles.urls')),
+    path('leje/', include('leave.urls')),
     #path('holidays/', include('holidays.urls')),
     path('api-auth', include('rest_framework.urls')),
     path('rest-auth/', include('rest_auth.urls')),

@@ -21,4 +21,3 @@ class UserRole(models.Model):
 
     def is_hr(self):
         return self.roli
-

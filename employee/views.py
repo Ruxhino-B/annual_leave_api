@@ -8,7 +8,16 @@ from .serializers import EmployeeSerializers
 from .permissions import ReadOnly, HrOrReadOnly, ReadOnlyHimselfsOrIsHr
 
 
-# Create your views here.
+# CreateAPIView ==> Vetem krijon Create dhe nuk shikon detaje
+# ListAPIView ==> Shikon listen
+# RetriveAPIView ==> Shikon details
+# DestroyeAPIView ==> Fshin/Delete element
+# UpdateAPIView ==> vetem ben update
+
+# ListCreateAPIView --> Liston dhe krijon Api view
+# RetriveUpdateAPIView ==> Shikon/Updateon API
+# RetriveDestroyAPIView ==> shikon/fshin API View
+# RetrieveUpdateDestroyAPIView ==> shikon/Updaten/Fshin ApiView
 
 class EmployeeSerializerListView(generics.ListCreateAPIView):
     """Create and List element of all Employees"""
