@@ -1,5 +1,6 @@
 from .models import Leje, ApprovimLeje
 from rest_framework import serializers
+from employee.serializers import EmployeeSerializers
 
 class LejeSerializers(serializers.ModelSerializer):
 

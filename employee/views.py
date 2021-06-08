@@ -49,3 +49,17 @@ class EmployeeSerializerDetailView(generics.RetrieveUpdateDestroyAPIView):
         emp.is_active = False
         emp.save()
         return Response({"message":f"{emp.username} is Deactivate as User {emp.is_active}"})
+
+class EmployeeSerializerDetailViewHimself(generics.ListAPIView):
+    serializer_class = EmployeeSerializers
+    permission_classes = [IsAuthenticated]
+
+    def get_queryset(self):
+        user = self.request.user
+        req_employee = User.objects.get(id=user.id)
+        return Employee.objects.filter(user_id=req_employee)
+
+class EmployeeSerializerUpdateDeleteRetrive(generics.RetrieveUpdateDestroyAPIView):
+    serializer_class = EmployeeSerializers
+    permission_classes = [ReadOnlyHimselfsOrIsHr & HrOrReadOnly]
+    queryset = Employee.objects.all()
